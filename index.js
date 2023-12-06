@@ -1,23 +1,18 @@
-function writeCards(names, event){
-    const thankYouMessages = [];
-
-    for (let i = 0; i < names.lenth; i++){
-        const message = 'Thank you, ${names[i]}, for the wonderful ${eventName} gift!'; 
-        thankYouMessages.push(message);
+function writeCards(names,eventName){
+    const message = []
+    for (let i=0;i<names.length; i++){
+      message.push(`Thank you, ${names[i]}, for the wonderful ${eventName} gift!`);
     }
-
-    return messages;
+    return message;
 }
-
-const names = ["Ada", "Brendan", "Ali"];
-const event = "birthday";
-const messages = writeCards(names, event);
-console.log(messages);
-
-function countDown(number){
-    for (let i = number; i >= 0; i--) {
-        console.log(i);
+function countDown(number) {
+    if (number < 1) {
+      console.log("Please provide a positive integer.");
+      return;
+    }
+  
+    while (number >= 0) {
+      console.log(number);
+      number--;
     }
 }
-
-countDown(4)
